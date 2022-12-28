@@ -1,0 +1,20 @@
+{% extends 'ingredients.html' %}
+{% block fieldcontent %}
+<div class="main-inline">
+    <!-- Here we will add a form that they may use to add/edit ingredients.-->
+    <p>Add Ingredient</p>
+    <form  method="post">
+        <p>
+            <label for="name">Name:</label>
+            <input class="name-input" type="add" value="" id="name" />
+        </p>
+        <p>
+            <label for="description">Description:</label>
+            <input class = "description-input" type="add" value="" id="description" />
+        </p>
+        <p>
+            <input class="button" type="submit" value="Add Ingredient" name="button"/>
+        </p>
+    </form>
+</div>
+{% endblock %}

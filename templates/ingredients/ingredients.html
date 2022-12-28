@@ -6,11 +6,11 @@
 <!-- options block is where buttons will go, linking to other endpoints -->
 <!-- i.e. Add Ingredient button will link to /ingredients/add-ingredient -->
 
-<!-- links work, but not I'm not sure if they are worth it at this moment..
+<!-- links work, but not I'm not sure if they are worth it at this moment..-->
 <a href="/ingredients/add">Add Ingredient</a>
-<a href="/ingredients/add">Edit Ingredient</a>
-<a href="/ingredients/add">Delete Ingredient</a>
--->
+<a href="/ingredients/edit">Edit Ingredient</a>
+<a href="/ingredients/delete">Delete Ingredient</a>
+
 
 <!-- ok, cannot get the buttons to work  O_o
 <button class="button" onclick="addIngredient()">Add Ingredient</button>
@@ -23,9 +23,16 @@
 </script>
 -->
 
-
 {% endblock %}
 {% block content %}
+<div class="list">
+    <a href="#">test object</a>
+    <a href="#">test object</a>
+    <a href="#">test object</a>
+    <a href="#">test object</a>
+    <!-- Here we will add a list of all ingredients that users may interact with.-->
+</div>
+{% block fieldcontent %}  {% endblock %}
 <!-- content block is where we display remaining page content, such as lists and forms -->
 <!-- i.e. list controller with a list of all existing ingredients, and a form for adding/editing an ingredient -->
 {% endblock %}

@@ -5,8 +5,7 @@ class Tag:
     name = str()
 
     def __init__(self):
-        self.id = int()
-        self.name = str()
+        self.id = -1
 
     def __init__(self, id, name):
         self.id = id
