@@ -46,3 +46,7 @@ class UnitOfMeasure:
     def __init__(self):
         self.unit = Unit.NONE
         self.unitType = UnitType.NONE
+
+    def __init__(self, unit, unitType):
+        self.unit = unit
+        self.unitType = unitType
