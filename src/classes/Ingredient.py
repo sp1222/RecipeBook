@@ -11,5 +11,3 @@ class Ingredient:
         self.id = id
         self.name = name
         self.tags = tags
-
-
