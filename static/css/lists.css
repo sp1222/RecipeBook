@@ -1,4 +1,4 @@
-/* The sidebar menu */
+/* The list menu */
 .list {
   height: 500px;
   width: 160px; /* Set the width of the sidebar */
@@ -8,7 +8,7 @@
   display: inline-block;
 }
 
-/* The navigation menu links */
+/* The list links */
 .list a {
   padding-bottom: 4px;
   text-decoration: none;
@@ -17,7 +17,7 @@
   display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
+/* When you mouse over the list objects, change their color */
 .list a:hover {
   color: #010101;
 }
