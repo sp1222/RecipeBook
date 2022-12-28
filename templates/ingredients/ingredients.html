@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Recipe Book {% endblock %}
+{% block header %} Ingredients {% endblock %}
+{% block summary %} This is the page where you may make changes to ingredients in the recipe book. {% endblock %}
+{% block options %}
+<!-- options block is where buttons will go, linking to other endpoints -->
+<!-- i.e. Add Ingredient button will link to /ingredients/add-ingredient -->
+<button class="button">Add Ingredients</button>
+{% endblock %}
+{% block content %}
+<!-- content block is where we display lists and forms for ingredients -->
+<!-- i.e. list controller with a list of all existing ingredients, and a form for adding/editing an ingredient -->
+{% endblock %}
