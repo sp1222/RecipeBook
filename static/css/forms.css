@@ -1,0 +1,15 @@
+.name-input {
+    width: 400px;
+    display: inline-block;
+}
+
+.description-input {
+    width: 400px;
+    height: 100px;
+    display: inline-block;
+}
+
+label {
+    width: 100px;
+    display: inline-block;
+}

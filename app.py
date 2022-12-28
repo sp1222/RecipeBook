@@ -3,11 +3,11 @@ My Personal Website
 '''
 
 from flask import Flask
-from src.blueprints.rb_home_blueprint import rb_home_blueprint
+from src.blueprints.home_blueprint import home_blueprint
 from src.blueprints.ingredients.ingredients_blueprint import ingredients_blueprint
 
 app = Flask(__name__)
-app.register_blueprint(rb_home_blueprint)
+app.register_blueprint(home_blueprint)
 app.register_blueprint(ingredients_blueprint)
 
 if __name__ == '__main__':

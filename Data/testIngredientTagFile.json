@@ -1,0 +1,86 @@
+{
+    "BEEF": {
+        "tag": "BEEF"
+    },
+    "BOBBY": {
+        "tag": "BOBBY"
+    },
+    "BREAKFAST": {
+        "tag": "BREAKFAST"
+    },
+    "CHICKEN": {
+        "tag": "CHICKEN"
+    },
+    "CONDIMENTS": {
+        "tag": "CONDIMENTS"
+    },
+    "DIP": {
+        "tag": "DIP"
+    },
+    "DRESSING": {
+        "tag": "DRESSING"
+    },
+    "EXPENSIVE": {
+        "tag": "EXPENSIVE"
+    },
+    "GUACAMOLE": {
+        "tag": "GUACAMOLE"
+    },
+    "HEALTHY FAT": {
+        "tag": "HEALTHY FAT"
+    },
+    "ITALIAN": {
+        "tag": "ITALIAN"
+    },
+    "JUICES": {
+        "tag": "JUICES"
+    },
+    "LATIN AMERICAN": {
+        "tag": "LATIN AMERICAN"
+    },
+    "MEDALLION": {
+        "tag": "MEDALLION"
+    },
+    "NONE": {
+        "tag": "NONE"
+    },
+    "PASTA": {
+        "tag": "PASTA"
+    },
+    "PORK": {
+        "tag": "PORK"
+    },
+    "POULTRY": {
+        "tag": "POULTRY"
+    },
+    "RICE": {
+        "tag": "RICE"
+    },
+    "SALAD": {
+        "tag": "SALAD"
+    },
+    "SHRIMP": {
+        "tag": "SHRIMP"
+    },
+    "SMOOTH": {
+        "tag": "SMOOTH"
+    },
+    "SNACKS": {
+        "tag": "SNACKS"
+    },
+    "STEAK": {
+        "tag": "STEAK"
+    },
+    "SUSHI": {
+        "tag": "SUSHI"
+    },
+    "TENDER": {
+        "tag": "TENDER"
+    },
+    "VEGETABLE": {
+        "tag": "VEGETABLE"
+    },
+    "WHOLE GRAIN": {
+        "tag": "WHOLE GRAIN"
+    }
+}
