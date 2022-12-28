@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> {% block title %} {% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/sidenav.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+    </head>
+    <body bgcolor="#CAFFF2" class="padding">
+        <div class="sidenav">
+            <a href="/">Home</a>
+            <a href="#">test 1</a>
+            <a href="#">test 2</a>
+        </div>
+        <div class="main">
+            <h1 class="green">
+                {% block header %} {% endblock %}
+            </h1>
+            <hr class="dotted-line">
+            <p class="green">
+                {% block summary %} {% endblock %}
+            </p>
+            <div>
+                <button class="button">Ingredient Tags</button>
+            </div>
+            <div>
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
