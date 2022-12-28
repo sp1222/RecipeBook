@@ -9,7 +9,7 @@
     <body bgcolor="#CAFFF2" class="padding">
         <div class="sidenav">
             <a href="/">Home</a>
-            <a href="#">test 1</a>
+            <a href="/ingredients">Ingredients</a>
             <a href="#">test 2</a>
         </div>
         <div class="main">
@@ -21,9 +21,9 @@
                 {% block summary %} {% endblock %}
             </p>
             <div>
-                <button class="button">Ingredient Tags</button>
+                {% block options%} {% endblock %}
             </div>
-            <div>
+            <div class="green">
                 {% block content %} {% endblock %}
             </div>
         </div>
