@@ -1,18 +1,20 @@
 
 /* Style page content */
 .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
+    margin-left: 160px;
     padding: 0px 10px;
 }
 
-.main-inline {
+/* aligns forms with top of lists */
+.form-inline {
     margin-top: 0px;
     margin-left: 160px;
-    padding: 0px 10px;
+    padding: 20px 10px;
     display: inline-block;
     vertical-align: top;
 }
 
+/* Main page padding */
 .padding {
     padding-top: 20px;
     padding-left: 70px;
@@ -20,10 +22,12 @@
     padding-bottom: 20px;
 }
 
+/* primary color for texts */
 .green {
     color: green;
 }
 
+/* dotted lines at the top of each page */
 hr.dotted-line {
     border: none;
     border-top: 2px dashed green;
@@ -32,6 +36,7 @@ hr.dotted-line {
     height: 2px;
 }
 
+/* button design */
 .button {
     border: none;
     color: white;
