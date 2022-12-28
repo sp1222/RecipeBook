@@ -1,5 +1,5 @@
 '''
-Recipe Book blueprint
+Recipe Book Homepage blueprint
 '''
 
 from flask import Blueprint, render_template
