@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recipe Book</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="forms.css">
+        <link rel="stylesheet" href="lists.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        
+    	<header>
+    		<!--Logo-->
+    		<h1><a href="Home.html" class="site-title">Recipe Book</a></h1>
+
+	    	<!--Nav-->
+	    	<nav>
+	    		<!--Top Nav-->
+	    		<ul>
+					<li><a href="Home.html" class="current">Home</a></li>
+					<li><a href="Ingredients.html">Ingredients</a></li>
+					<li><a href="Test2.html">Test2</a></li>
+				</ul>
+
+				<!-- "Hamburger menu"- still figuring this out-->
+				
+	    	</nav>
+	        
+	    </header>
+	        
+        <div class="main">
+            <!--page opener-->
+            <h2>
+                This is the recipe book home page.
+            </h2>
+
+            <hr class="dotted-line">
+
+            	<!--page content-->
+            	<p>
+                This is where content goes.
+	            </p>
+
+	            <div>
+	                This is where content goes.
+	            </div>
+
+	            <div>
+	                This is where content goes.
+	            </div>				
+
+            <!--button-->
+            <button>This is a button
+            </button>
+
+        </div>
+	   
+	   <!-- Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon-->
+		<script>
+		function myFunction() {
+		  var x = document.getElementById("myLinks");
+		  if (x.style.display === "block") {
+		    x.style.display = "none";
+		  } else {
+		    x.style.display = "block";
+		  }
+		}
+		</script>
+	        
+    </body>
+
+</html>

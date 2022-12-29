@@ -1,0 +1,23 @@
+/* The list menu */
+.list {
+  height: 500px;
+  width: 160px; /* Set the width of the sidebar */
+  z-index: 1; /* Stay on top */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  display: inline-block;
+}
+
+/* The list links */
+.list a {
+  padding-bottom: 4px;
+  text-decoration: none;
+  font-size: 20px;
+  color: blue;
+  display: block;
+}
+
+/* When you mouse over the list objects, change their color */
+.list a:hover {
+  color: #010101;
+}
