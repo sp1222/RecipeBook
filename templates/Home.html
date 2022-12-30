@@ -15,18 +15,30 @@
     		<!--Logo-->
     		<h1><a href="Home.html" class="site-title">Recipe Book</a></h1>
 
-	    	<!--Nav-->
-	    	<nav>
-	    		<!--Top Nav-->
+	    	<!--Top Nav-->
+	    	<nav id="main-menu">
 	    		<ul>
 					<li><a href="Home.html" class="current">Home</a></li>
-					<li><a href="Ingredients.html">Ingredients</a></li>
+					<li><a href="ingredients.html">Ingredients</a></li>
 					<li><a href="Test2.html">Test2</a></li>
 				</ul>
+			</nav>
 
-				<!-- "Hamburger menu"- still figuring this out-->
-				
-	    	</nav>
+			<!-- "Hamburger menu" for mobile-->
+			<input type="checkbox" id="hamburger-input" class="burger-shower">
+
+			<label id="hamburger-menu" for="hamburger-input">
+			  <nav id="sidebar-menu">
+			    <h3><a href="Home.html">Recipe Book</a></h3>
+			    <ul>
+			      <li><a href="Home.html">Home</a></li>
+			      <li><a href="ingredients.html">Ingredients</a></li>
+			      <li><a href="Test2.html">Test2</a></li>
+			    </ul>
+			  </nav>
+			</label>
+
+			<div class="overlay"></div>
 	        
 	    </header>
 	        
