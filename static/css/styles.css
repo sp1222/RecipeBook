@@ -105,6 +105,7 @@ h6 {
 .site-title {
     color: var(--color-peach);
     font-size: var(--size-5up);
+    width: 100%;
 }
 
 a {
@@ -139,9 +140,10 @@ hr.dotted-line {
 
 /* button design */
 .link-button {
-    background: var(--color-navy-dark);
+    background-color: var(--white);
+    border: 2px solid var(--color-navy-dark);
+    color: var(--color-navy-dark);
     border-radius: .15em;
-    color: var(--color-cream);
     display: inline-block;
     margin: .25rem .13rem;
     padding: 1rem 2rem;
@@ -149,11 +151,10 @@ hr.dotted-line {
     cursor: pointer;
 }
 
-/*struggling to get hover to work*/
+/*hover state*/
 .link-button:hover {
-    background-color: var(--white);
-    border: 2px solid var(--color-navy-dark);
-    color: var(--color-navy-dark);
+    background: var(--color-navy-dark);
+    color: var(--color-cream);
 }
 
 /* ==========================================================================
@@ -167,58 +168,121 @@ header {
     padding: 0 2rem;
 }
 
-nav li {
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+#main-menu li {
     display: inline-block;
+    font-size: var(--size-2up);
     padding: 1em;
     list-style-type: none;
 }
 
-nav a {
-    background-color: var(--color-peach);
-    border-radius: .15em;
-    color: var(--color-text-primary);
+#main-menu a {
+    color: var(--color-peach);
     font-size: var(--size-1up);
     padding: .5rem;
     text-decoration: none;
 }
 
-nav a:hover {
-    background-color: var(--color-peach-dark);
+#main-menu a:hover {
     color: var(--color-text-white-on-dark);
+    text-decoration: underline;
+}
+
+#main-menu a:focus {
     text-decoration: none;
+    text-decoration: underline;
 }
 
-nav a:active {
-    background-color: #4CAF50;
-    text-decoration: none;
+#main-menu .current {
+    color: var(--color-peach-dark);
+    text-decoration: underline;
 }
 
-nav a:focus {
-    text-decoration: none;
+#hamburger-input{
+  display: none;
 }
 
-nav .current {
-    background-color: var(--color-peach-dark);
-    text-decoration: none;
+#hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    border: none;
+    padding: 0px;
+    margin: 20px;
+    font-family: var(--font-headings);
+    background: linear-gradient(
+      to bottom, 
+      #F6B585, #F6B585 20%, 
+      #112433 20%, #112433 40%, 
+      #F6B585 40%, #F6B585 60%, 
+      #112433 60%, #112433 80%, 
+      #F6B585 80%, #F6B585 100%
+    );
 }
 
-@media (min-width: 432px) {
-    nav ul {
-        padding-left: 8rem;
-    }
+#hamburger-menu #sidebar-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: var(--color-navy-dark);
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
-@media (min-width: 544px) {
-    header {
-        padding: 0 1rem;
-    }
+#hamburger-menu h3 {
+  color: #F6B585;
+  font-size: 2.2rem;
+}
 
-    nav ul {
-        font-size: var(--size-3up);
-        padding: 0;
-    }
+#hamburger-menu ul {
+  padding-left: 0px;
+}
 
-    nav li {
-        padding: 0 .5em 0 0;
-    }
+#hamburger-menu li {
+  list-style-type: none;
+  line-height: 3rem;
+}
+
+#hamburger-menu a {
+  color: var(--color-peach);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+    visibility: visible;
+    right: 0;
+}
+#hamburger-input:checked ~ .overlay{
+   visibility: visible;
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) {
+  #main-menu {
+    display: none;
+  }
+  #hamburger-menu {
+    display: inline;
+  }
 }
