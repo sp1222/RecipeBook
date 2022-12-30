@@ -138,25 +138,22 @@ hr.dotted-line {
 }
 
 /* button design */
-button {
-    background-color: var(--color-navy-dark);
-    border: none;
-    color: var(--color-cream);
-    padding: 0.625rem 2rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0.25rem 0.13rem;
+.link-button {
+    background: var(--color-navy-dark);
     border-radius: .15em;
-    transition-duration: 0.4s;
+    color: var(--color-cream);
+    display: inline-block;
+    margin: .25rem .13rem;
+    padding: 1rem 2rem;
+    transition: all .5s ease-out;
     cursor: pointer;
 }
 
 /*struggling to get hover to work*/
-button:hover {
-    background color: var(--color-navy-light);
-    color: var(--color-cream);
+.link-button:hover {
+    background-color: var(--white);
+    border: 2px solid var(--color-navy-dark);
+    color: var(--color-navy-dark);
 }
 
 /* ==========================================================================
