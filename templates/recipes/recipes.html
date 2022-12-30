@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Recipe Book - Recipes {% endblock %}
+{% block header %} Recipes {% endblock %}
+{% block summary %} This is the page where you may make changes to recipes in the recipe book. {% endblock %}
+{% block options %}
+<!-- options block is where buttons will go, linking to other endpoints -->
+<!-- i.e. Add Recipe button will link to /recipes/add-recipe -->
+
+<!-- links work, but not I'm not sure if they are worth it at this moment..-->
+<a href="/recipes/add">Add Recipe</a>
+<a href="/recipes/edit">Edit Recipe</a>
+<a href="/recipes/delete">Delete Recipe</a>
+
+
+<!-- ok, cannot get the buttons to work  O_o
+<button class="button" onclick="addRecipe()">Add Recipe</button>
+<button class="button">Edit Recipe</button>
+<button class="button">Delete Recipe</button>
+<script>
+    addRecipe() {
+        $("form").attr("action", "/recipes/add");
+    }
+</script>
+-->
+
+{% endblock %}
+{% block content %}
+<div class="list">
+    <p>Recipes</p>
+    {% for name in nameToIdMap.keys() %}
+        <a href="#">{{name}}</a>
+    {% endfor %}
+    <!-- Here we will add a list of all recipes that users may interact with.-->
+</div>
+{% block fieldcontent %}  {% endblock %}
+<!-- content block is where we display remaining page content, such as lists and forms -->
+<!-- i.e. list controller with a list of all existing recipes, and a form for adding/editing an recipe -->
+{% endblock %}

@@ -11,11 +11,11 @@ recipes_blueprint = Blueprint('recipes', __name__, template_folder='../../../tem
 
 def getRecipeNameToIdMap():
     '''
-    Load ingredient names from data to display on the page.
+    Load recipe names from data to display on the page.
     '''
     nameToIdMap = dict()
 
-    with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='r') as f:
+    with open(os.getcwd() + '/data/testRecipeFile.json', encoding='utf-8', mode='r') as f:
         data = json.load(f)
         for key, obj in data.items():
             nameToIdMap.update({obj['name']: key})
