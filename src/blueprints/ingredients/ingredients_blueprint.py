@@ -9,7 +9,7 @@ import os
 ingredients_blueprint = Blueprint('ingredients', __name__, template_folder='../../../templates/ingredients/')
 
 
-def getIngredientNames():
+def getIngredientNameToIdMap():
     '''
     Load ingredient names from data to display on the page.
     '''
@@ -28,9 +28,8 @@ def ingredients():
     Recipe Book Ingredients Page endpoint
     :return:
     '''
-    nameToIdMap = getIngredientNames()
+    nameToIdMap = getIngredientNameToIdMap()
     return render_template('ingredients.html', nameToIdMap=nameToIdMap)
-    # return render_template('ingredients.html')
 
 
 @ingredients_blueprint.route('/ingredients/add')
@@ -39,7 +38,8 @@ def addIngredient():
     Recipe Book Ingredients Page endpoint to add ingredients
     :return:
     '''
-    return render_template('add_ingredient.html')
+    nameToIdMap = getIngredientNameToIdMap()
+    return render_template('add_ingredient.html', nameToIdMap=nameToIdMap)
 
 
 @ingredients_blueprint.route('/ingredients/edit')
@@ -48,7 +48,8 @@ def editIngredient():
     Recipe Book Ingredients Page endpoint to edit ingredients
     :return:
     '''
-    return render_template('edit_ingredient.html')
+    nameToIdMap = getIngredientNameToIdMap()
+    return render_template('edit_ingredient.html', nameToIdMap=nameToIdMap)
 
 
 @ingredients_blueprint.route('/ingredients/delete')
@@ -57,4 +58,5 @@ def deleteIngredient():
     Recipe Book Ingredients Page endpoint to delete ingredients
     :return:
     '''
-    return render_template('delete_ingredient.html')
+    nameToIdMap = getIngredientNameToIdMap()
+    return render_template('delete_ingredient.html', nameToIdMap=nameToIdMap)
