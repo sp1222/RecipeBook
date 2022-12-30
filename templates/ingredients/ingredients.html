@@ -27,10 +27,9 @@
 {% block content %}
 <div class="list">
     <p>Ingredients</p>
-    <a href="#">test object</a>
-    <a href="#">test object</a>
-    <a href="#">test object</a>
-    <a href="#">test object</a>
+    {% for name in nameToIdMap.keys() %}
+        <a href="#">{{name}}</a>
+    {% endfor %}
     <!-- Here we will add a list of all ingredients that users may interact with.-->
 </div>
 {% block fieldcontent %}  {% endblock %}
