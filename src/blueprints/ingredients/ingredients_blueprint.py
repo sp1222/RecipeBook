@@ -52,6 +52,9 @@ def editIngredient():
     return render_template('edit_ingredient.html', nameToIdMap=nameToIdMap)
 
 
+@ingredients_blueprint.route('/ingredients/edit/')
+
+
 @ingredients_blueprint.route('/ingredients/delete')
 def deleteIngredient():
     '''

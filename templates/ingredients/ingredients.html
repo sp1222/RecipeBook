@@ -27,8 +27,8 @@
 {% block content %}
 <div class="list">
     <p>Ingredients</p>
-    {% for name in nameToIdMap.keys() %}
-        <a href="#">{{name}}</a>
+    {% for name, id in nameToIdMap.items() %}
+        <a href="/ingredients/edit/id={{id}}#name={{name}}">{{name}}</a>
     {% endfor %}
     <!-- Here we will add a list of all ingredients that users may interact with.-->
 </div>
