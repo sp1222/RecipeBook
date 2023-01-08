@@ -29,16 +29,6 @@ def addIngredient():
     return render_template('add_ingredient.html', nameToIdMap=nameToIdMap)
 
 
-# @ingredients_blueprint.route('/ingredients/edit')
-# def editIngredient():
-#     '''
-#     Recipe Book Ingredients Page endpoint to edit ingredients
-#     :return:
-#     '''
-#     nameToIdMap = ingredient.getIngredientNameToIdMap()
-#     return render_template('edit_ingredient.html', nameToIdMap=nameToIdMap)
-
-
 @ingredients_blueprint.route('/ingredients/edit/id=<id>')
 def editIngredient(id):
     '''
