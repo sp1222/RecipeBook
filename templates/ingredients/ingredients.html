@@ -8,8 +8,8 @@
 
 <!-- links work, but not I'm not sure if they are worth it at this moment..-->
 <a href="/ingredients/add">Add Ingredient</a>
-<a href="/ingredients/edit">Edit Ingredient</a>
-<a href="/ingredients/delete">Delete Ingredient</a>
+<!--<a href="/ingredients/edit">Edit Ingredient</a>-->
+<!--<a href="/ingredients/delete">Delete Ingredient</a>-->
 
 
 <!-- ok, cannot get the buttons to work  O_o
@@ -25,12 +25,11 @@
 
 {% endblock %}
 {% block content %}
+<p>Ingredients</p>
 <div class="list">
-    <p>Ingredients</p>
     {% for name, id in nameToIdMap.items() %}
-        <a href="/ingredients/edit/id={{id}}#name={{name}}">{{name}}</a>
+        <a href="/ingredients/edit/id={{id}}">{{name}}</a>
     {% endfor %}
-    <!-- Here we will add a list of all ingredients that users may interact with.-->
 </div>
 {% block fieldcontent %}  {% endblock %}
 <!-- content block is where we display remaining page content, such as lists and forms -->
