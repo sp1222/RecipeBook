@@ -3,7 +3,7 @@ Recipe Book Ingredients Blueprint
 Handles rendering pages given a route.
 '''
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 import src.dao.Ingredient as ingredient
 
 ingredients_blueprint = Blueprint('ingredients', __name__, template_folder='../../../templates/ingredients/')
@@ -29,11 +29,17 @@ def addIngredient():
     return render_template('add_ingredient.html', nameToIdMap=nameToIdMap)
 
 
-@ingredients_blueprint.route('/ingredients/edit/id=<id>')
+@ingredients_blueprint.route('/ingredients/edit/id=<id>', methods=['POST', 'GET'])
 def editIngredient(id):
     '''
     Recipe Book Ingredients page endpoint to edit a selected ingredient
     '''
+    # update the ingredients given the form data
+    if request.method == 'POST':
+        name = request.form['name']
+        description = request.form['description']
+        tags = list()
+        ingredient.updateIngredient(id, name, description, tags)
     nameToIdMap = ingredient.getIngredientNameToIdMap()
     ingredientObj = ingredient.getIngredient(id)
     return render_template('edit_ingredient.html', nameToIdMap=nameToIdMap, ingredientObj=ingredientObj)

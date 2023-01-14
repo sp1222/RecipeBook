@@ -44,9 +44,9 @@
         "tags": null
     },
     "7": {
-        "description": "",
+        "description": "asdf",
         "name": "Cinnamon",
-        "tags": null
+        "tags": []
     },
     "8": {
         "description": "",
@@ -130,15 +130,13 @@
         ]
     },
     "21": {
-        "description": "",
+        "description": "asdf",
         "name": "qwerty",
-        "tags": [
-            "BREAKFAST"
-        ]
+        "tags": []
     },
     "22": {
-        "description": "",
+        "description": "asdf",
         "name": "zzzz",
-        "tags": null
+        "tags": []
     }
 }
