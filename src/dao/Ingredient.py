@@ -33,7 +33,7 @@ def getIngredient(id):
     return ingredient
 
 
-def updateIngredient(id, name, description, tags):
+def updateIngredient(updatedIngredient):
     '''
     Update ingredient data given user input
     '''
@@ -41,11 +41,11 @@ def updateIngredient(id, name, description, tags):
     with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='r') as f:
         ingredients = json.load(f)
     # TODO: add error handling.
-    if id in ingredients:
-        ingredients[id]['name'] = name
-        ingredients[id]['description'] = description
+    if updatedIngredient.id in ingredients:
+        ingredients[updatedIngredient.id]['name'] = updatedIngredient.name
+        ingredients[updatedIngredient.id]['description'] = updatedIngredient.description
         # TODO: add tags to page.
-        # ingredients[id]['tags'] = tags
+        # ingredients[updatedIngredient.id]['tags'] = updatedIngredient.tags
         with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='w') as f:
             json.dump(ingredients, f, indent=4)
     else:

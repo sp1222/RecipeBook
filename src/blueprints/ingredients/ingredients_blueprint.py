@@ -4,6 +4,7 @@ Handles rendering pages given a route.
 '''
 
 from flask import Blueprint, render_template, request
+from src.classes.Ingredient import Ingredient
 import src.dao.Ingredient as ingredient
 
 ingredients_blueprint = Blueprint('ingredients', __name__, template_folder='../../../templates/ingredients/')
@@ -39,7 +40,8 @@ def editIngredient(id):
         name = request.form['name']
         description = request.form['description']
         tags = list()
-        ingredient.updateIngredient(id, name, description, tags)
+        updatedIngredient = Ingredient(id, name, description, tags)
+        ingredient.updateIngredient(updatedIngredient)
     nameToIdMap = ingredient.getIngredientNameToIdMap()
     ingredientObj = ingredient.getIngredient(id)
     return render_template('edit_ingredient.html', nameToIdMap=nameToIdMap, ingredientObj=ingredientObj)
