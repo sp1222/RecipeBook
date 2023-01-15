@@ -20,7 +20,7 @@ def getAvailableId():
     currentId = 1
     # iterate through all current existing ids until we come across one that does not exist.
     while True:
-        if currentId not in ids:
+        if str(currentId) not in ids:
             break
         currentId += 1
     return currentId
@@ -61,10 +61,7 @@ def updateIngredientList(ingredient):
     ingredientToList = dict()
     ingredientToList.update({'name':ingredient.name})
     ingredientToList.update({'description':ingredient.description})
-    # ingredients[ingredient.id]['name'] = ingredient.name
-    # ingredients[ingredient.id]['description'] = ingredient.description
-    # TODO: add tags to page.
-    # ingredients[ingredient.id]['tags'] = ingredient.tags
+    ingredientToList.update({'tags':ingredient.tags})
     ingredients[ingredient.id] = ingredientToList
     with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='w') as f:
         json.dump(ingredients, f, indent=4)

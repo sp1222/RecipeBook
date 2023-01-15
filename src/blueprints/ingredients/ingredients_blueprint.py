@@ -5,7 +5,7 @@ Handles rendering pages given a route.
 
 from flask import Blueprint, render_template, request
 from src.classes.Ingredient import Ingredient
-import src.dao.Ingredient as ingredient
+import src.dao.IngredientDao as ingredient
 
 ingredients_blueprint = Blueprint('ingredients', __name__, template_folder='../../../templates/ingredients/')
 
@@ -26,10 +26,10 @@ def addIngredient():
     Recipe Book Ingredients Page endpoint to add ingredients
     :return:
     '''
-    print('add ingredient page')
     if request.method == 'POST' and request.form['button'] == 'Add Ingredient':
         print('good to add ingredient')
         id = ingredient.getAvailableId()
+        # TODO: capitalize the first letter in name
         name = request.form['name']
         description = request.form['description']
         tags = list()
