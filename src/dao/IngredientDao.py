@@ -60,7 +60,6 @@ def updateIngredientList(ingredient):
         ingredients = json.load(f)
     # TODO: add error handling.
     ingredientToList = dict()
-    ingredient.name = ingredient.name[0].upper() + ingredient.name[1:]
     ingredientToList.update({'name':ingredient.name})
     ingredientToList.update({'description':ingredient.description})
     ingredientToList.update({'tags':ingredient.tags})

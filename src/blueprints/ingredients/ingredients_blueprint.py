@@ -29,12 +29,13 @@ def addIngredient():
     if request.method == 'POST' and request.form['button'] == 'Add Ingredient':
         print('good to add ingredient')
         id = ingredient.getAvailableId()
-        # TODO: capitalize the first letter in name
-        name = request.form['name']
-        description = request.form['description']
-        tags = list()
-        newIngredient = Ingredient(id, name, description, tags)
-        ingredient.updateIngredientList(newIngredient)
+        # TODO: input validation, name should be a required field, handle error if empty
+        if request.form['name'] != string.empty:
+            name = request.form['name'][0].upper() + request.form['name'][1:]
+            description = request.form['description']
+            tags = list()
+            newIngredient = Ingredient(id, name, description, tags)
+            ingredient.updateIngredientList(newIngredient)
     nameToIdMap = ingredient.getIngredientNameToIdMap()
     return render_template('add_ingredient.html', nameToIdMap=nameToIdMap)
 
