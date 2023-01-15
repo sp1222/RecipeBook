@@ -9,6 +9,23 @@ import json
 import os
 
 
+def getAvailableId():
+    '''
+    Gets the next available Id for a new ingredient
+    '''
+    ids = None
+    with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='r') as f:
+        data = json.load(f)
+        ids = data.keys()
+    currentId = 1
+    # iterate through all current existing ids until we come across one that does not exist.
+    while True:
+        if currentId not in ids:
+            break
+        currentId += 1
+    return currentId
+
+
 def getIngredientNameToIdMap():
     '''
     Load ingredient names from data.
@@ -33,7 +50,7 @@ def getIngredient(id):
     return ingredient
 
 
-def updateIngredient(updatedIngredient):
+def updateIngredientList(ingredient):
     '''
     Update ingredient data given user input
     '''
@@ -41,12 +58,13 @@ def updateIngredient(updatedIngredient):
     with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='r') as f:
         ingredients = json.load(f)
     # TODO: add error handling.
-    if updatedIngredient.id in ingredients:
-        ingredients[updatedIngredient.id]['name'] = updatedIngredient.name
-        ingredients[updatedIngredient.id]['description'] = updatedIngredient.description
-        # TODO: add tags to page.
-        # ingredients[updatedIngredient.id]['tags'] = updatedIngredient.tags
-        with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='w') as f:
-            json.dump(ingredients, f, indent=4)
-    else:
-        print('something went terribly wrong, id ' + str(id) + ' is not an existing ingredient id O_o')
+    ingredientToList = dict()
+    ingredientToList.update({'name':ingredient.name})
+    ingredientToList.update({'description':ingredient.description})
+    # ingredients[ingredient.id]['name'] = ingredient.name
+    # ingredients[ingredient.id]['description'] = ingredient.description
+    # TODO: add tags to page.
+    # ingredients[ingredient.id]['tags'] = ingredient.tags
+    ingredients[ingredient.id] = ingredientToList
+    with open(os.getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='w') as f:
+        json.dump(ingredients, f, indent=4)

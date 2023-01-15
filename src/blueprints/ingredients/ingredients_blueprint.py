@@ -20,12 +20,21 @@ def ingredients():
     return render_template('ingredients.html', nameToIdMap=nameToIdMap)
 
 
-@ingredients_blueprint.route('/ingredients/add')
+@ingredients_blueprint.route('/ingredients/add', methods=['POST', 'GET'])
 def addIngredient():
     '''
     Recipe Book Ingredients Page endpoint to add ingredients
     :return:
     '''
+    print('add ingredient page')
+    if request.method == 'POST' and request.form['button'] == 'Add Ingredient':
+        print('good to add ingredient')
+        id = ingredient.getAvailableId()
+        name = request.form['name']
+        description = request.form['description']
+        tags = list()
+        newIngredient = Ingredient(id, name, description, tags)
+        ingredient.updateIngredientList(newIngredient)
     nameToIdMap = ingredient.getIngredientNameToIdMap()
     return render_template('add_ingredient.html', nameToIdMap=nameToIdMap)
 
@@ -35,13 +44,12 @@ def editIngredient(id):
     '''
     Recipe Book Ingredients page endpoint to edit a selected ingredient
     '''
-    # update the ingredients given the form data
-    if request.method == 'POST':
+    if request.method == 'POST' and request.form['button'] == 'Edit Ingredient':
         name = request.form['name']
         description = request.form['description']
         tags = list()
         updatedIngredient = Ingredient(id, name, description, tags)
-        ingredient.updateIngredient(updatedIngredient)
+        ingredient.updateIngredientList(updatedIngredient)
     nameToIdMap = ingredient.getIngredientNameToIdMap()
     ingredientObj = ingredient.getIngredient(id)
     return render_template('edit_ingredient.html', nameToIdMap=nameToIdMap, ingredientObj=ingredientObj)
