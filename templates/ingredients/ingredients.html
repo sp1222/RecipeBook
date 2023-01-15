@@ -7,21 +7,11 @@
 <!-- i.e. Add Ingredient button will link to /ingredients/add-ingredient -->
 
 <!-- links work, but not I'm not sure if they are worth it at this moment..-->
-<a href="/ingredients/add">Add Ingredient</a>
-<!--<a href="/ingredients/edit">Edit Ingredient</a>-->
-<!--<a href="/ingredients/delete">Delete Ingredient</a>-->
+<!--<a href="/ingredients/add">Add Ingredientt</a>-->
+<form action="/ingredients/add" method="GET">
+    <input class="button" type="submit" name="button" value="Add Ingredient"/>
+</form>
 
-
-<!-- ok, cannot get the buttons to work  O_o
-<button class="button" onclick="addIngredient()">Add Ingredient</button>
-<button class="button">Edit Ingredient</button>
-<button class="button">Delete Ingredient</button>
-<script>
-    addIngredient() {
-        $("form").attr("action", "/ingredients/add");
-    }
-</script>
--->
 
 {% endblock %}
 {% block content %}

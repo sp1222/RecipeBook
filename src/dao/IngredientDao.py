@@ -4,6 +4,7 @@ This represents the model/data access layer.
 Handles CRUD operations on the data.
 '''
 
+from collections import OrderedDict
 from src.classes.Ingredient import Ingredient
 import json
 import os
@@ -18,7 +19,6 @@ def getAvailableId():
         data = json.load(f)
         ids = data.keys()
     currentId = 1
-    # iterate through all current existing ids until we come across one that does not exist.
     while True:
         if str(currentId) not in ids:
             break
@@ -35,6 +35,7 @@ def getIngredientNameToIdMap():
         data = json.load(f)
         for key, obj in data.items():
             nameToIdMap.update({obj['name']: key})
+    nameToIdMap = OrderedDict(sorted(nameToIdMap.items()))
     return nameToIdMap
 
 
@@ -59,6 +60,7 @@ def updateIngredientList(ingredient):
         ingredients = json.load(f)
     # TODO: add error handling.
     ingredientToList = dict()
+    ingredient.name = ingredient.name[0].upper() + ingredient.name[1:]
     ingredientToList.update({'name':ingredient.name})
     ingredientToList.update({'description':ingredient.description})
     ingredientToList.update({'tags':ingredient.tags})
