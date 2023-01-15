@@ -30,7 +30,7 @@ def addIngredient():
         print('good to add ingredient')
         id = ingredient.getAvailableId()
         # TODO: input validation, name should be a required field, handle error if empty
-        if request.form['name'] != string.empty:
+        if request.form['name']:
             name = request.form['name'][0].upper() + request.form['name'][1:]
             description = request.form['description']
             tags = list()
