@@ -27,7 +27,6 @@ def addIngredient():
     :return:
     '''
     if request.method == 'POST' and request.form['button'] == 'Add Ingredient':
-        print('good to add ingredient')
         id = ingredient.getAvailableId()
         # TODO: input validation, name should be a required field, handle error if empty
         if request.form['name']:
@@ -45,22 +44,21 @@ def editIngredient(id):
     '''
     Recipe Book Ingredients page endpoint to edit a selected ingredient
     '''
-    if request.method == 'POST' and request.form['button'] == 'Edit Ingredient':
-        name = request.form['name']
-        description = request.form['description']
-        tags = list()
-        updatedIngredient = Ingredient(id, name, description, tags)
-        ingredient.updateIngredientList(updatedIngredient)
+    if request.method == 'POST':
+        if request.form['button'] == 'Edit Ingredient':
+            name = request.form['name']
+            description = request.form['description']
+            tags = list()
+            updatedIngredient = Ingredient(id, name, description, tags)
+            ingredient.updateIngredientList(updatedIngredient)
+        elif request.form['button'] == 'Delete Ingredient':
+            if not ingredient.isIngredientInARecipe(id):
+                ingredient.deleteIngredient(id)
+            else:
+                print('display error message stating the ingredient is in use in a recipe and cannot be deleted.')
+                print('maybe list the recipes the ingredient is in?')
+            nameToIdMap = ingredient.getIngredientNameToIdMap()
+            return render_template('ingredients.html', nameToIdMap=nameToIdMap)
     nameToIdMap = ingredient.getIngredientNameToIdMap()
     ingredientObj = ingredient.getIngredient(id)
     return render_template('edit_ingredient.html', nameToIdMap=nameToIdMap, ingredientObj=ingredientObj)
-
-
-@ingredients_blueprint.route('/ingredients/delete')
-def deleteIngredient():
-    '''
-    Recipe Book Ingredients Page endpoint to delete ingredients
-    :return:
-    '''
-    nameToIdMap = ingredient.getIngredientNameToIdMap()
-    return render_template('delete_ingredient.html', nameToIdMap=nameToIdMap)

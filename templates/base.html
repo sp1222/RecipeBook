@@ -17,7 +17,7 @@ This is the base page with properties that all pages will inherit from.
     <body>
     	<header>
     		<!--Logo-->
-    		<h1><a href="Home.html" class="site-title">Recipe Book</a></h1>
+    		<h1><a href="/home" class="site-title">Recipe Book</a></h1>
 
 	    	<!--Top Nav-->
 	    	<nav id="main-menu">
@@ -33,7 +33,7 @@ This is the base page with properties that all pages will inherit from.
 
 			<label id="hamburger-menu" for="hamburger-input">
                 <nav id="sidebar-menu">
-                <h3><a href="Home.html">Recipe Book</a></h3>
+                <h3><a href="/home">Recipe Book</a></h3>
                     <ul>
                         <li><a href="/home">Home</a></li>
                         <li><a href="/ingredients">Ingredients</a></li>
@@ -68,14 +68,14 @@ This is the base page with properties that all pages will inherit from.
 
 	   <!-- Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon-->
 		<script>
-		function myFunction() {
-		  var x = document.getElementById("myLinks");
-		  if (x.style.display === "block") {
-		    x.style.display = "none";
-		  } else {
-		    x.style.display = "block";
-		  }
-		}
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
 		</script>
 
     </body>
