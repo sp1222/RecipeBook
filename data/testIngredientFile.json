@@ -118,12 +118,12 @@
     },
     "19": {
         "description": "",
-        "name": "asdf",
+        "name": "Asdf",
         "tags": null
     },
     "20": {
         "description": "",
-        "name": "duck",
+        "name": "Duck",
         "tags": [
             "BOBBY",
             "DRESSING"
@@ -131,16 +131,16 @@
     },
     "21": {
         "description": "asdf",
-        "name": "qwerty",
+        "name": "Qwerty",
         "tags": []
     },
     "22": {
         "description": "zzzz",
-        "name": "zzzz",
+        "name": "Zzzz",
         "tags": []
     },
     "23": {
-        "name": "aaaaaa",
+        "name": "Aaaaaa",
         "description": "",
         "tags": []
     },
