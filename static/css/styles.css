@@ -1,8 +1,21 @@
 
+/* ==========================================================================
+Page Layout
+========================================================================== */
+
 /* Style page content */
+body {
+    margin: 0;
+}
+
+main {
+    margin: 1rem 2rem 6rem;
+    max-width: 850px;
+}
+
 .main {
-    margin-left: 160px;
-    padding: 0px 10px;
+    margin: 1rem;
+
 }
 
 /* aligns forms with top of lists */
@@ -14,38 +27,262 @@
     vertical-align: top;
 }
 
-/* Main page padding */
-.padding {
-    padding-top: 20px;
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-bottom: 20px;
+/* ==========================================================================
+ Colors
+========================================================================== */
+
+/* color for texts */
+html {
+    --color-text-primary:           #1f2d3d;
+    --color-text-secondary:         #005ad1;
+    --color-text-white-on-dark:    white;
 }
 
-/* primary color for texts */
-.green {
-    color: green;
+/* colors for other things*/
+html {
+    --color-peach:                         #F6B585;
+    --color-peach-dark:                    #ff7815;
+    --color-navy-dark:                     #112433;
+    --color-navy-light:                    #005ad1;
+    --color-cream:                         #F4EEE0;
+    --color-green:                         #4CAF50;
+    --color-gray-dark:                     #3c4858;
+    --color-black-nearly:                  #1f2d3d;
+    --color-white:                         white;
+
 }
 
+/* ==========================================================================
+ Typography
+========================================================================== */
+html {
+    --font-headings:            'Roboto', sans-serif;
+    --font-body:                'Source Sans Pro', sans-serif;
+
+    --ratio: 1.2;
+
+    --size-5up: calc( var(--size-4up) * var(--ratio));
+    --size-4up: calc( var(--size-3up) * var(--ratio));
+    --size-3up: calc( var(--size-2up) * var(--ratio));
+    --size-2up: calc( var(--size-1up) * var(--ratio));
+    --size-1up: calc( 1rem * var(--ratio));
+    --size-1down: calc( 1rem / 1.1);
+
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+}
+
+h1 {
+
+    font-size: var(--size-5up);
+}
+
+h2 {
+    font-size: var(--size-4up);
+}
+
+h3 {
+    font-size: var(--size-3up);
+}
+
+h4 {
+    font-size: var(--size-2up);
+}
+
+h5 {
+    font-size: var(--size-1up);
+}
+
+h6 {
+    font-size: var(--size-1down);
+}
+
+.site-title {
+    color: var(--color-peach);
+    font-size: var(--size-5up);
+    width: 100%;
+}
+
+a {
+    color: var(--color-text-primary);
+    font-size: var(--size-1up);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-text-secondary);
+}
+
+a:active {
+    color: var(--color-text-secondary);
+}
+
+a:focus {
+    color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+ Elements and Components
+========================================================================== */
 /* dotted lines at the top of each page */
 hr.dotted-line {
     border: none;
-    border-top: 2px dashed green;
-    color: green;
-    background-color: #CAFFF2;
-    height: 2px;
+    border-top: 0.13rem dashed;
+    color: var(--color-green);
+    background-color: transparent;
+    height: 0.13rem;
 }
 
 /* button design */
-.button {
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
+.link-button {
+    background-color: var(--white);
+    border: 2px solid var(--color-navy-dark);
+    color: var(--color-navy-dark);
+    border-radius: .15em;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    margin: .25rem .13rem;
+    padding: 1rem 2rem;
+    transition: all .5s ease-out;
     cursor: pointer;
-    background-color: #4CAF50;
+}
+
+/*hover state*/
+.link-button:hover {
+    background: var(--color-navy-dark);
+    color: var(--color-cream);
+}
+
+/* ==========================================================================
+ Header Component
+========================================================================== */
+header {
+    align-items: center;
+    background-color: var(--color-navy-dark);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+#main-menu li {
+    display: inline-block;
+    font-size: var(--size-2up);
+    padding: 1em;
+    list-style-type: none;
+}
+
+#main-menu a {
+    color: var(--color-peach);
+    font-size: var(--size-1up);
+    padding: .5rem;
+    text-decoration: none;
+}
+
+#main-menu a:hover {
+    color: var(--color-text-white-on-dark);
+    text-decoration: underline;
+}
+
+#main-menu a:focus {
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+#main-menu .current {
+    color: var(--color-peach-dark);
+    text-decoration: underline;
+}
+
+#hamburger-input{
+  display: none;
+}
+
+#hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    border: none;
+    padding: 0px;
+    margin: 20px;
+    font-family: var(--font-headings);
+    background: linear-gradient(
+      to bottom, 
+      #F6B585, #F6B585 20%, 
+      #112433 20%, #112433 40%, 
+      #F6B585 40%, #F6B585 60%, 
+      #112433 60%, #112433 80%, 
+      #F6B585 80%, #F6B585 100%
+    );
+}
+
+#hamburger-menu #sidebar-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: var(--color-navy-dark);
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+  color: #F6B585;
+  font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+  padding-left: 0px;
+}
+
+#hamburger-menu li {
+  list-style-type: none;
+  line-height: 3rem;
+}
+
+#hamburger-menu a {
+  color: var(--color-peach);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+    visibility: visible;
+    right: 0;
+}
+#hamburger-input:checked ~ .overlay{
+   visibility: visible;
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) {
+  #main-menu {
+    display: none;
+  }
+  #hamburger-menu {
+    display: inline;
+  }
 }
