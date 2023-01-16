@@ -13,7 +13,7 @@ ingredients_blueprint = Blueprint('ingredients', __name__, template_folder='../.
 @ingredients_blueprint.route('/ingredients')
 def ingredients():
     '''
-    Recipe Book Ingredients Page endpoint
+    Recipe Book Ingredients Page endpoint.
     :return:
     '''
     nameToIdMap = ingredient.getIngredientNameToIdMap()
@@ -23,7 +23,7 @@ def ingredients():
 @ingredients_blueprint.route('/ingredients/add', methods=['POST', 'GET'])
 def addIngredient():
     '''
-    Recipe Book Ingredients Page endpoint to add ingredients
+    Recipe Book Ingredients Page endpoint to add ingredients.
     :return:
     '''
     if request.method == 'POST' and request.form['button'] == 'Add Ingredient':
@@ -42,7 +42,7 @@ def addIngredient():
 @ingredients_blueprint.route('/ingredients/edit/id=<id>', methods=['POST', 'GET'])
 def editIngredient(id):
     '''
-    Recipe Book Ingredients page endpoint to edit a selected ingredient
+    Recipe Book Ingredients page endpoint to edit a selected ingredient.
     '''
     if request.method == 'POST':
         if request.form['button'] == 'Edit Ingredient':

@@ -12,7 +12,7 @@ import json
 
 def getAvailableId():
     '''
-    Gets the next available Id for a new ingredient
+    Gets the next available Id for a new ingredient.
     '''
     ids = None
     with open(getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='r') as f:
@@ -53,7 +53,7 @@ def getIngredient(id):
 
 def updateIngredientList(ingredient):
     '''
-    Update ingredient data given user input
+    Update ingredient data given user input.
     '''
     ingredients = None
     with open(getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='r') as f:
@@ -69,6 +69,9 @@ def updateIngredientList(ingredient):
 
 
 def isIngredientInARecipe(id):
+    '''
+    Returns boolean if an ingredient is used in a recipe or not.
+    '''
     ingredientIds = set()
     with open(getcwd() + '/data/testRecipeFile.json', encoding='utf-8', mode='r') as f:
         data = json.load(f)
@@ -80,6 +83,9 @@ def isIngredientInARecipe(id):
 
 
 def deleteIngredient(id):
+    '''
+    Delete the ingredient from the ingredient list.
+    '''
     ingredients = dict()
     with open(getcwd() + '/data/testIngredientFile.json', encoding='utf-8', mode='r') as f:
         ingredients = json.load(f)
