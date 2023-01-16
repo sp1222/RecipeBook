@@ -1,33 +1,82 @@
+<!--
+
+This is the base page with properties that all pages will inherit from.
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title> {% block title %} {% endblock %}</title>
-        <link rel="stylesheet" href="{{ url_for('static',filename='css/sidenav.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',filename='css/forms.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',filename='css/lists.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
-    <body bgcolor="#CAFFF2" class="padding">
-        <div class="sidenav">
-            <a href="/">Home</a>
-            <a href="/ingredients">Ingredients</a>
-            <a href="#">test 2</a>
-        </div>
+    <body>
+    	<header>
+    		<!--Logo-->
+    		<h1><a href="Home.html" class="site-title">Recipe Book</a></h1>
+
+	    	<!--Top Nav-->
+	    	<nav id="main-menu">
+	    		<ul>
+					<li><a href="/home" class="current">Home</a></li>
+					<li><a href="/ingredients">Ingredients</a></li>
+					<li><a href="#">Test2</a></li>
+				</ul>
+			</nav>
+
+			<!-- "Hamburger menu" for mobile-->
+			<input type="checkbox" id="hamburger-input" class="burger-shower">
+
+			<label id="hamburger-menu" for="hamburger-input">
+                <nav id="sidebar-menu">
+                <h3><a href="Home.html">Recipe Book</a></h3>
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/ingredients">Ingredients</a></li>
+                        <li><a href="#">Test2</a></li>
+                    </ul>
+                </nav>
+			</label>
+
+			<div class="overlay"></div>
+
+	    </header>
+
         <div class="main">
-            <h1 class="green">
+            <!--page opener-->
+            <h2>
                 {% block header %} {% endblock %}
-            </h1>
+            </h2>
+
             <hr class="dotted-line">
-            <p class="green">
-                {% block summary %} {% endblock %}
-            </p>
-            <div>
-                {% block options%} {% endblock %}
-            </div>
-            <div class="green">
+
+            <p>
                 {% block content %} {% endblock %}
-            </div>
+            </p>
+
+            <!--button-->
+            <p>
+                <div>
+                    <a href="Home.html" class="link-button">I'm a button!</a>
+                </div>
+            </p>
         </div>
+
+	   <!-- Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon-->
+		<script>
+		function myFunction() {
+		  var x = document.getElementById("myLinks");
+		  if (x.style.display === "block") {
+		    x.style.display = "none";
+		  } else {
+		    x.style.display = "block";
+		  }
+		}
+		</script>
+
     </body>
 </html>
