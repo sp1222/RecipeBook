@@ -2,7 +2,7 @@
 
 ## Summary
 
-A web-based site for managing recipes, built with Flask using Python.
+A web-based site for managing recipes, built with Flask using Python.  This is currently under construction.
 
 ## Run Locally
 
