@@ -10,9 +10,10 @@ This method allows you to run the web app locally, given that the requirements a
 
 1. Clone the repository.
 2. Open with your favorite IDE (I use PyCharm community edition).
-3. In the terminal, run `python3 -mpip install -r requirements.txt` to install required packages from `requirements.txt` to your machine.
-4. In the terminal, run `python3 app.py`.
-5. In a browser, go to `localhost:5000` to see the home page.
+3. Set up your virtual environment if you haven't already and activate it.
+4. In the terminal, run `pip install -r requirements.txt` to install required packages from `requirements.txt` to your machine.
+5. In the terminal, run `python app.py`.
+6. In a browser, go to `localhost:5000` to see the home page.
 
 ## Run With Docker
 
