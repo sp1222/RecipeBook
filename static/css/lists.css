@@ -1,7 +1,7 @@
 /* The list menu */
 .list {
   height: 500px;
-  width: 160px; /* Set the width of the sidebar */
+  width: 300px; /* Set the width of the list */
   z-index: 1; /* Stay on top */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;

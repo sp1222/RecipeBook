@@ -13,11 +13,11 @@
         "description": "Add a description for this recipe",
         "direction": "Add directions for this recipe",
         "ingredients": {
-            "Chocolate Chips": {
+            "6": {
                 "quantity": 2.0,
                 "units": "CUP"
             },
-            "Salmon": {
+            "15": {
                 "quantity": 6.0,
                 "units": "OUNCEWEIGHT"
             }
@@ -32,19 +32,19 @@
         "description": "Add a description for this recipe",
         "direction": "Add directions for this recipe",
         "ingredients": {
-            "Cinnamon": {
+            "7": {
                 "quantity": 4.0,
                 "units": "GRAM"
             },
-            "Eggs": {
+            "8": {
                 "quantity": 2.0,
                 "units": "EACH"
             },
-            "Peanut Butter": {
+            "12": {
                 "quantity": 2.0,
                 "units": "OUNCEWEIGHT"
             },
-            "Salmon": {
+            "15": {
                 "quantity": 4.0,
                 "units": "OUNCEWEIGHT"
             }
@@ -59,27 +59,27 @@
         "description": "Add a description for this recipe",
         "direction": "Add directions for this recipe",
         "ingredients": {
-            "Butter organic": {
+            "3": {
                 "quantity": 2.0,
                 "units": "POUND"
             },
-            "Chocolate Chips": {
+            "6": {
                 "quantity": 0.0,
                 "units": "GRAM"
             },
-            "Eggs": {
+            "8": {
                 "quantity": 2.0,
                 "units": "EACH"
             },
-            "Peanut Butter": {
+            "12": {
                 "quantity": 3.0,
                 "units": "OUNCEWEIGHT"
             },
-            "Strawberry Jelly": {
+            "16": {
                 "quantity": 3.0,
                 "units": "GRAM"
             },
-            "Sugar": {
+            "17": {
                 "quantity": 3.0,
                 "units": "GRAM"
             }
@@ -94,19 +94,19 @@
         "description": "Add a description for this recipe",
         "direction": "Add directions for this recipe",
         "ingredients": {
-            "Cheddar Cheese": {
+            "4": {
                 "quantity": 0.0,
                 "units": "GRAM"
             },
-            "Peanut Butter": {
+            "12": {
                 "quantity": 3.0,
                 "units": "GRAM"
             },
-            "Water": {
+            "18": {
                 "quantity": 0.0,
                 "units": "PINT"
             },
-            "duck": {
+            "20": {
                 "quantity": 0.0,
                 "units": "EACH"
             }
@@ -121,11 +121,11 @@
         "description": "Add a description for this recipe",
         "direction": "Add directions for this recipe",
         "ingredients": {
-            "Butter organic": {
+            "3": {
                 "quantity": 5.0,
                 "units": "TEASPOON"
             },
-            "Eggs": {
+            "8": {
                 "quantity": 0.0,
                 "units": "EACH"
             }
@@ -140,11 +140,11 @@
         "description": "Add a description for this recipe",
         "direction": "Add directions for this recipe",
         "ingredients": {
-            "Beef Tenderloin": {
+            "2": {
                 "quantity": 4.0,
                 "units": "OUNCEWEIGHT"
             },
-            "Cheddar Cheese": {
+            "4": {
                 "quantity": 1.0,
                 "units": "OUNCEWEIGHT"
             }
@@ -179,11 +179,11 @@
         "description": "Add a description for this recipe",
         "direction": "Add directions for this recipe",
         "ingredients": {
-            "Cinnamon": {
+            "7": {
                 "quantity": 1.0,
                 "units": "GRAM"
             },
-            "Peanut Butter": {
+            "12": {
                 "quantity": 2.0,
                 "units": "QUART"
             }
@@ -198,7 +198,7 @@
         "description": "some delicious recipe..\nrecipe\ntesting edits",
         "direction": "step 1.\nstep 2.\nstep 3. edit this",
         "ingredients": {
-            "Avocado, Whole": {
+            "1": {
                 "quantity": 4.409999847412109,
                 "units": "TEASPOON"
             }

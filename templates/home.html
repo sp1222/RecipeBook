@@ -1,5 +1,27 @@
+<!--
+
+This is the home page, extends base.html properties.
+
+-->
+
 {% extends 'base.html' %}
-{% block title %} Recipe Book {% endblock%}
-{% block header %} This is the recipe book home page {% endblock%}
-{% block summary %} This is the page where you may make changes to the recipe book {% endblock %}
-{% block content %} content block {% endblock %}
+
+{% block header %}
+<!--header-->
+This is the recipe book home page.
+{% endblock %}
+
+{% block content %}
+<!--page content-->
+<p>
+	This is where content goes.
+</p>
+
+<div>
+	This is where content goes.
+</div>
+
+<div>
+	This is where content goes.
+</div>
+{% endblock %}
