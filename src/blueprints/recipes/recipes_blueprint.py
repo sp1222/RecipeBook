@@ -50,13 +50,3 @@ def editRecipe():
     '''
     nameToIdMap = getRecipeNameToIdMap()
     return render_template('edit_recipe.html', nameToIdMap=nameToIdMap)
-
-
-@recipes_blueprint.route('/recipes/delete')
-def deleteRecipe():
-    '''
-    Recipe Book Recipes Page endpoint to delete recipes
-    :return:
-    '''
-    nameToIdMap = getRecipeNameToIdMap()
-    return render_template('delete_recipe.html', nameToIdMap=nameToIdMap)

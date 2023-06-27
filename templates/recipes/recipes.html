@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
-{% block title %} Recipe Book - Recipes {% endblock %}
 {% block header %} Recipes {% endblock %}
-{% block summary %} This is the page where you may make changes to recipes in the recipe book. {% endblock %}
-{% block options %}
+{% block content %}
 <!-- options block is where buttons will go, linking to other endpoints -->
 <!-- i.e. Add Recipe button will link to /recipes/add-recipe -->
-
-<!-- links work, but not I'm not sure if they are worth it at this moment..-->
-<a href="/recipes/add">Add Recipe</a>
-<a href="/recipes/edit">Edit Recipe</a>
-<a href="/recipes/delete">Delete Recipe</a>
-
-
+<!--add ingredient button-->
+<form action="/recipes/add" method="GET">
+    <input class="button" type="submit" name="button" value="Add Recipe"/>
+</form>
 <!-- ok, cannot get the buttons to work  O_o
 <button class="button" onclick="addRecipe()">Add Recipe</button>
 <button class="button">Edit Recipe</button>
@@ -22,9 +17,6 @@
     }
 </script>
 -->
-
-{% endblock %}
-{% block content %}
 <div class="list">
     <p>Recipes</p>
     {% for name in nameToIdMap.keys() %}
